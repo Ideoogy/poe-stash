@@ -22,7 +22,7 @@ class Stash extends Component {
         children: []
       }
     };
-	this._retrieveData();
+	//this._retrieveData();
   }
   
   _retrieveData = async () => {
