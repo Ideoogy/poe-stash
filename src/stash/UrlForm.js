@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { accountService } from '@/_services';
+import './UrlForm.css';
 
 class UrlForm extends React.Component{
   constructor(props) {
@@ -46,15 +47,20 @@ class UrlForm extends React.Component{
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Label:
-          <input type="text" value={this.state.label} onChange={this.handleLabelChange} />
-        </label>
-		<label>
-          Url:
-          <input type="text" value={this.state.url} onChange={this.handleUrlChange} />
-        </label>
-        <input type="submit" value="Submit"/>
+        <fieldset>
+          <legend>
+            <p><label className = "field">Label:</label>
+            <input classname = "inputbox" type="text" value={this.state.label} onChange={this.handleLabelChange} />
+            </p>
+
+            <p><label className = "field">Url:</label>
+            <input classname = "inputbox" type="text" value={this.state.url} onChange={this.handleUrlChange} />
+            </p>
+
+            <input classname = "submit" type="submit" value="Submit"/>
+            
+          </legend>
+        </fieldset>
       </form>
     );
   }

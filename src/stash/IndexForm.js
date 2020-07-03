@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { accountService } from '@/_services';
+import './UrlForm.css';
 
 class IndexForm extends React.Component {
   constructor(props) {
@@ -38,11 +39,16 @@ class IndexForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" style= {{position: 'relative', top: '35px', right: '227px'}}/>
+        <fieldset>
+          <legend>
+            <p><label className = "field">Name:</label>
+            <input classname = "inputbox" type="text" value={this.state.label} onChange={this.handleLabelChange} />
+            </p>
+            <p>
+            <input classname = "submit" type="submit" value="Submit"/>
+            </p>
+          </legend>
+        </fieldset>
       </form>
     );
   }

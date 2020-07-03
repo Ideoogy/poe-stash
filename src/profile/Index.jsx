@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { Details } from './Details';
 import { Update } from './Update';
+import './profile.css';
 
 function Profile({ match }) {
     const { path } = match;
