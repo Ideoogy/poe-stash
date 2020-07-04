@@ -9,8 +9,8 @@ function Details({ match }) {
 
     return (
         <div>
-            <h1>My Profile</h1>
-            <p>
+            <h1 className="important">My Profile</h1>
+            <p className="important">
                 <strong>Name: </strong> {user.title}. {user.firstName} {user.lastName}<br />
                 <strong>Email: </strong> {user.email}
             </p>

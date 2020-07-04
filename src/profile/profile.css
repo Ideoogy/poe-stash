@@ -1,4 +1,20 @@
-div.p-4{
+body{
     background-image: url('./background_1.jpg');
     background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    z-index: -1;
 }
+div.app-container{
+    background-image: url('./background_1.jpg');
+    background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    color: white;
+}
+
