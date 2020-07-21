@@ -16,22 +16,22 @@ class ItemForm extends React.Component {
   }
 
   handleSubmit(event) {
-	var keyArray = this.props.indexKey.split('/');
-	if (keyArray.length>0) {
-	  let currentNode = this.props.data[0];
-	  var i,j;
-	  for (i=1; i< keyArray.length; i++){
+    var keyArray = this.props.indexKey.split('/');
+    if (keyArray.length>0) {
+      let currentNode = this.props.data[0];
+      var i,j;
+      for (i=1; i< keyArray.length; i++){
         for (j=0; j< currentNode.nodes.length; j++){
-		  if (currentNode.nodes[j].key == keyArray[i]) {
-		    currentNode = currentNode.nodes[j];	  
-		  }
-		}  
-	  }
-	  currentNode.nodes.push({key: this.props.data[0].count, label: this.state.value, nodes: []});
-	  this.props.data[0].count +=1;
-	  accountService.updateStash(user.id, this.props.data);
-	  this.props.setTreeData(this.props.data);
-	}
+          if (currentNode.nodes[j].key == keyArray[i]) {
+            currentNode = currentNode.nodes[j];	  
+          }
+        }  
+      }
+      currentNode.nodes.push({key: this.props.data[0].count, label: this.state.value, nodes: []});
+      this.props.data[0].count +=1;
+      accountService.updateStash(user.id, this.props.data);
+      this.props.setTreeData(this.props.data);
+    }
     event.preventDefault();
   }
 

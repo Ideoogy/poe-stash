@@ -35,7 +35,7 @@ export default function StashView(props) {
       defaultCollapseIcon={<ExpandMoreIcon />}
       defaultExpanded={['root']}
       defaultExpandIcon={<ChevronRightIcon />}
-	  onNodeSelect = {testSelect}
+	    onNodeSelect = {testSelect}
     >
       {renderTree(props.data)}
     </TreeView>

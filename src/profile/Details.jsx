@@ -11,7 +11,7 @@ function Details({ match }) {
         <div>
             <h1 className="important">My Profile</h1>
             <p className="important">
-                <strong>Name: </strong> {user.title}. {user.firstName} {user.lastName}<br />
+                <strong>Username: </strong> {user.userName}<br />
                 <strong>Email: </strong> {user.email}
             </p>
             <p><Link to={`${path}/update`}>Update Profile</Link></p>

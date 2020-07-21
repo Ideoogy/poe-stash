@@ -8,8 +8,8 @@ import { App } from './app';
 
 import './styles.less';
 
-import { configureFakeBackend } from './_helpers';
-configureFakeBackend();
+//import { configureFakeBackend } from './_helpers';
+//configureFakeBackend();
 // attempt silent token refresh before startup
 accountService.refreshToken().finally(startApp);
 
