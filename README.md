@@ -1,6 +1,8 @@
-Poe Website Client
+Website Application Client made for online game, Path of Exile
 
 "Development Website": http://ec2-18-144-3-238.us-west-1.compute.amazonaws.com:8080/account/login
+
+An account for testing website functionality for development, and for Interviewers to look at the website
 
 Tester account
 email: poesitetester@gmail.com
