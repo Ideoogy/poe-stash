@@ -7,3 +7,5 @@ An account for testing website functionality for development, and for Recruiters
 Tester account
 email: poesitetester@gmail.com
 password: aafc033c-b80b-4590-a9b2-a2daffb0c4c6
+
+Back end server is not publicly hosted on github.
