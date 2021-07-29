@@ -42,10 +42,10 @@ class IndexForm extends React.Component {
         <fieldset>
           <legend>
             <p><label className = "field">Name:</label>
-            <input classname = "inputbox" type="text" value={this.state.value} onChange={this.handleChange} />
+            <input className = "inputbox" type="text" value={this.state.value} onChange={this.handleChange} />
             </p>
             <p>
-            <input classname = "submit" type="submit" value="Submit"/>
+            <input className = "submit" type="submit" value="Submit"/>
             </p>
           </legend>
         </fieldset>

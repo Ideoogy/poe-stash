@@ -96,10 +96,10 @@ class Stash extends Component {
           <div className="p-4">
               <div className="container">
                   <h1>{user.userName}</h1>
-                  <Box my="2rem" pt = "1rem" pb="16rem" bgcolor="##f5f5f5" border={1} borderRadius={16}>
+                  <Box className="stash" my="2rem" pt = "1rem" pb="16rem" bgcolor="##f5f5f5" border={1} borderRadius={16}>
                     <StashView data={this.state.treeData} setIndex = {this.setIndex}/>
                   </Box>
-                  {this.state.selectedIndex != null && <Button onClick={this.toggleIndexForm}>Add Index</Button>}
+                  {this.state.selectedIndex != null && <Button className="indexButton" onClick={this.toggleIndexForm}>Add Index</Button>}
                   {this.state.selectedIndex != null && <Button onClick={this.toggleUrlForm}>Add Item</Button>}
                   {this.state.showIndexForm && <IndexForm data={this.state.treeData} indexKey={this.state.selectedIndex} setTreeData={this.setTreeData}/>}
                   {this.state.showUrlForm && <UrlForm data={this.state.treeData} indexKey={this.state.selectedIndex} setTreeData={this.setTreeData}/>}

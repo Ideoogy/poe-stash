@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { accountService } from '@/_services';
+import './UrlForm.css';
 const user = accountService.userValue;
 
 class NodeForm extends React.Component {
@@ -27,7 +28,7 @@ class NodeForm extends React.Component {
 		  }
 		}  
 	  }
-	  currentNode.nodes.push({key: this.props.data[0].count, label: this.state.value, containsUrl: False, nodes: []});
+	  currentNode.nodes.push({key: this.props.data[0].count, label: this.state.value, containsUrl: False, icon: 0, nodes: []});
 	  this.props.data[0].count +=1;
 	  accountService.updateStash(user.id, this.props.data);
 	  this.props.setTreeData(this.props.data);
