@@ -1,7 +1,7 @@
 Website Application Client made for online game, Path of Exile
 
 
-"Development Website": http://http://ec2-13-57-243-51.us-west-1.compute.amazonaws.com/account/login
+"Development Website": http://ec2-13-57-243-51.us-west-1.compute.amazonaws.com/account/login
 
 An account for testing website functionality for development, and for Recruiters to look at the website
 
