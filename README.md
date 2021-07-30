@@ -15,4 +15,4 @@ Fix css for login
 Add other profile viewing
 
 Back end server code can be seen here
-https://github.com/Ideoogy/poe-server-public-repository
+https://github.com/Ideoogy/poe-public-backend/
