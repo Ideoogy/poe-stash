@@ -58,7 +58,7 @@ class UrlForm extends React.Component{
               <p><label className = "field">Url:</label>
               <input className = "inputbox" type="text" value={this.state.url} onChange={this.handleUrlChange} />
               </p>
-              <input className = "submit" type="submit" value="Submit"/>
+              <input type="submit" value="Submit"/>
             </div>
           </legend>
         </fieldset>
