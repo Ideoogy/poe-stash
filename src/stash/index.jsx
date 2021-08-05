@@ -65,7 +65,6 @@ class Stash extends Component {
   };
   
   getSelectedNode = (index) => {
-    console.log(index)
     var keyArray = index.split('/');
 	  let currentNode = this.state.treeData;
 	  var i,j;
@@ -81,13 +80,43 @@ class Stash extends Component {
   
   toggleUrlLink = (node) => {
     if (node.containsurl == true) {
-      this.setState(state => ({ tradeLink: node.url, selectedIndex: null}));
+      this.setState(state => ({ tradeLink: node, selectedIndex: null}));
     }		
   };
   
   openInNewTab(url) {
     var win = window.open(url, '_blank');
     win.focus();
+  };
+  
+  delete = () => {
+    try {
+      accountService.userValue
+      let index = this.state.selectedIndex;
+      if (index == null) {
+        index = this.state.tradeLink.id;
+      }
+      console.log(index)
+      var keyArray = index.split('/');
+      console.log(keyArray);
+      let currentNode = this.state.treeData;
+      var parentNode = null;
+      var i,j;
+      for (i=1; i< keyArray.length; i++){
+        for (j=0; j< currentNode.children.length; j++){
+          if (currentNode.children[j].id == (currentNode.id+'/'+keyArray[i])) {
+            parentNode = currentNode;
+            currentNode = currentNode.children[j];
+            break;	  
+          }
+        }
+      }
+      parentNode.children.splice(j,1);
+      accountService.updateStash(accountService.userValue.id, this.state.treeData);
+      this.setTreeData(this.state.treeData);
+    } catch (error) {
+      console.log('Error deleting index or item')
+    }
   };
 
   render() {
@@ -97,13 +126,14 @@ class Stash extends Component {
               <div className="container">
                   <h1>{user.userName}</h1>
                   <Box className="stash" my="2rem" pt = "1rem" pb="16rem" bgcolor="##f5f5f5" border={1} borderRadius={16}>
-                    <StashView data={this.state.treeData} setIndex = {this.setIndex}/>
+                    <StashView source = {this} data={this.state.treeData} setIndex = {this.setIndex}/>
                   </Box>
-                  {this.state.selectedIndex != null && <Button className="indexButton" onClick={this.toggleIndexForm}>Add Index</Button>}
+                  {this.state.selectedIndex != null && <Button onClick={this.toggleIndexForm}>Add Index</Button>}
                   {this.state.selectedIndex != null && <Button onClick={this.toggleUrlForm}>Add Item</Button>}
+                  {(this.state.selectedIndex != null || this.state.tradeLink!=null) && <Button color="danger" className="deleteButton" onClick={this.delete}>Delete</Button>}
                   {this.state.showIndexForm && <IndexForm data={this.state.treeData} indexKey={this.state.selectedIndex} setTreeData={this.setTreeData}/>}
                   {this.state.showUrlForm && <UrlForm data={this.state.treeData} indexKey={this.state.selectedIndex} setTreeData={this.setTreeData}/>}
-                  {this.state.tradeLink!=null && <Button color="success" onClick={() => {this.openInNewTab(this.state.tradeLink);}}> Trade Link</Button>}
+                  {this.state.tradeLink!=null && <Button color="success" onClick={() => {this.openInNewTab(this.state.tradeLink.url);}}> Trade Link</Button>}
               </div>
           </div>
       );

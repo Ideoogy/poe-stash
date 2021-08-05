@@ -1,5 +1,4 @@
-
-input[type=text], select {
+.inputbox[type=text]{
     width: 40%;
     margin: 8px 0;
     display: inline-block;
@@ -44,4 +43,3 @@ fieldset p {
     clear: both;
     padding: 5px;
 }
-

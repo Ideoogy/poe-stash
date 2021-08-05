@@ -158,7 +158,7 @@ export default function StashView(props) {
     </StyledTreeItem>
   );
   
-  const testSelect = (value) => {
+  const testSelect = (event, value) => {
     props.setIndex(value);
   };
   
