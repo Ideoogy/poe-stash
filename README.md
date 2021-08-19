@@ -1,8 +1,8 @@
 Website Application Client made for online game, Path of Exile
 
-Website is currently down for updating dependencies and maintaining code for said dependencies.
+Website currently migrated to heroku for ease of access and development
 
-"Development Website": 
+"Development Website": https://poestash.herokuapp.com/
 
 An account for testing website functionality for development, and for Recruiters to look at the website
 
