@@ -3,18 +3,20 @@
     "version": "1.0.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Ideoogy/poe-stash"
+        "url": "https://github.com/Ideoogy/ec2-poe-stash"
     },
     "license": "MIT",
     "scripts": {
+        "start": "webpack-dev-server --open",
         "build": "webpack --mode production",
-        "start": "webpack-dev-server --open"
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
     },
     "dependencies": {
         "@material-ui/core": "^4.10.2",
         "@material-ui/icons": "^4.9.1",
         "@material-ui/lab": "^4.0.0-alpha.56",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "cheerio": "^1.0.0-rc.3",
         "formik": "^2.1.4",
         "history": "^4.10.1",
@@ -23,6 +25,7 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-router-dom": "^5.0.0",
+        "react-scripts": "^4.0.3",
         "reactstrap": "^8.4.1",
         "rxjs": "^6.3.3",
         "yup": "^0.28.1"
@@ -32,7 +35,6 @@
         "@babel/plugin-proposal-class-properties": "^7.10.1",
         "@babel/preset-env": "^7.4.3",
         "@babel/preset-react": "^7.0.0",
-        "babel-loader": "^8.0.5",
         "css-loader": "^3.4.2",
         "file-loader": "^6.0.0",
         "html-webpack-plugin": "^3.2.0",

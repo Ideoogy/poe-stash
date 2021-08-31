@@ -13,6 +13,7 @@ function get(url) {
         method: 'GET',
         headers: authHeader(url)
     };
+    console.log(url)
     return fetch(url, requestOptions).then(handleResponse);
 }
 
@@ -50,8 +51,7 @@ function authHeader(url) {
     // return auth header with jwt if user is logged in and request is to the api url
     const user = accountService.userValue;
     const isLoggedIn = user && user.jwtToken;
-    const isApiUrl = url.startsWith(config.apiUrl);
-    if (isLoggedIn && isApiUrl) {
+    if (isLoggedIn) {
         return { Authorization: `Bearer ${user.jwtToken}` };
     } else {
         return {};
@@ -59,7 +59,9 @@ function authHeader(url) {
 }
 
 function handleResponse(response) {
+    console.log(response);
     return response.text().then(text => {
+        console.log(text);
         const data = text && JSON.parse(text);
         
         if (!response.ok) {

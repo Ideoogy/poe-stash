@@ -4,7 +4,8 @@ import config from 'config';
 import { fetchWrapper, history } from '@/_helpers';
 
 const userSubject = new BehaviorSubject(null);
-const baseUrl = `${config.apiUrl}/accounts`;
+//const baseUrl = `${config.apiUrl}/accounts`;
+const baseUrl = `/accounts`;
 
 export const accountService = {
     login,
@@ -16,6 +17,7 @@ export const accountService = {
     validateResetToken,
     resetPassword,
     getAll,
+    getUserList,
     getById,
 	getStash,
     create,
@@ -45,6 +47,7 @@ function logout() {
 }
 
 function refreshToken() {
+	console.log(`${baseUrl}/refresh-token`);
     return fetchWrapper.post(`${baseUrl}/refresh-token`, {})
         .then(user => {
             // publish user to subscribers and start timer to refresh token
@@ -76,6 +79,10 @@ function resetPassword({ token, password, confirmPassword }) {
 
 function getAll() {
     return fetchWrapper.get(baseUrl);
+}
+
+function getUserList() {
+    return fetchWrapper.get(`${baseUrl}/users`);
 }
 
 function getById(id) {

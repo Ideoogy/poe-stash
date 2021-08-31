@@ -11,15 +11,25 @@ function Nav() {
         const subscription = accountService.user.subscribe(x => setUser(x));
         return subscription.unsubscribe;
     }, []);
-
     // only show nav when logged in
-    if (!user) return null;
-
+    if (!user) return (
+        <div>
+            <nav className="navbar navbar-expand navbar-dark bg-dark">
+                <div className="navbar-nav">
+                    <NavLink exact to="/" className="nav-item nav-link">Home</NavLink>
+                    <NavLink to="/board" className="nav-item nav-link">User Board</NavLink>
+                    <NavLink to="/account/login" className="nav-item nav-link">Login</NavLink>
+                </div>
+            </nav>
+            <Route path="/admin" component={AdminNav} />
+        </div>
+    );
+    else
     return (
         <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
                 <div className="navbar-nav">
-                    <NavLink exact to="/" className="nav-item nav-link">Stash</NavLink>
+                    <NavLink exact to="/stash" className="nav-item nav-link">Stash</NavLink>
                     <NavLink to="/profile" className="nav-item nav-link">Profile</NavLink>
                     {user.role === Role.Admin &&
                         <NavLink to="/admin" className="nav-item nav-link">Admin</NavLink>
